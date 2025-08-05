@@ -1,0 +1,54 @@
+# Parallelization
+Partition :	2 2 2
+
+# Mesh definition
+Lx :	5
+Ly :    2
+Lz :	1
+nx :	60
+ny :	24
+nz :	12
+Stretching : 1.2
+
+# Fluid properties and velocity
+Dynamic viscosity : 0.001
+Density : 1000
+Inflow velocity : 0.5  # Now used as inlet velocity
+Drag model: Harper-Moore   # Options: Harper-Moore, Schiller-Naumann, bubble
+
+Perturbation : 0.0
+# Time integration
+Max timestep size : 0.01
+Max cfl number : 0.5
+
+# Pressure solver
+Pressure tolerance : 5e-2
+Pressure iteration : 200
+
+# Implicit velocity solver
+Implicit tolerance : 5e-2
+Implicit iteration : 200
+
+# Particle parameters
+Particle diameter: 0.1    # Particle size [m]
+Particle density: 1    # kg/m³
+Particle viscosity: 1.81e-5   # Pa·s (same as fluid by default)
+Collision timescale: 5.0e-3  # [s]
+Restitution coefficient: 0.99 # Particle-wall
+Wall restitution: 0.8        # Wall collision
+Gravity: 0.0 -9.81 0.0       # m/s²
+
+# Injection parameters
+Mass flow rate: 1.0e-7            # kg/s
+Injection position: 0.0 -1.0 0.0  # x y z coordinates [m]
+Injection velocity: 0.0 0.05 0.0  # Injection velocity [m/s]
+Injection diameter: 0.1           # Injection region diameter [m]
+Injection mean diameter: 1.0e-3   # Mean particle diameter [m]
+Injection diameter std: 0.0    # Standard deviation of diameter [m]
+Injection min diameter: 0.5e-3    # Minimum particle diameter [m]
+Injection max diameter: 1.5e-3    # Maximum particle diameter [m]
+Injection diameter shift: 0.0     # Diameter shift parameter [m]
+
+# Ensight output
+Ensight output period :  0.1
+Postproc output period : 0.5	
